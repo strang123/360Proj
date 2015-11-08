@@ -102,7 +102,7 @@ public class UpdateHealthDoctors extends JDialog {
 		btnGoBack.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) 
 			{
-				Frames.cond.setVisible(false); 
+				Frames.update_doc.setVisible(false); 
 				Frames.docMenu.setLocationRelativeTo(null);
 				Frames.docMenu.setVisible(true);
 			}

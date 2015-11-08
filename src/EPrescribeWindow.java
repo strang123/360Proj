@@ -102,6 +102,10 @@ public class EPrescribeWindow extends JFrame{
 		scrollBar.setBounds(344, 11, 17, 97);
 		panel.add(scrollBar);
 		
+		JLabel lblPatients = new JLabel("Patients");
+		lblPatients.setBounds(44, 11, 76, 14);
+		contentPane.add(lblPatients);
+		
 	}
 }
 
