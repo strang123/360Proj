@@ -1,0 +1,147 @@
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import java.awt.Font;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+import java.text.SimpleDateFormat;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class SendAlert extends JDialog {
+
+	private final JPanel contentPanel = new JPanel();
+	private JTextField textFieldAlertMsg;
+	
+	
+	Calendar cal = new GregorianCalendar();
+	
+	int seconds = cal.get(Calendar.SECOND);
+	int minute = cal.get(Calendar.MINUTE);
+	int hour = cal.get(Calendar.HOUR);
+	
+	int day = cal.get(Calendar.DAY_OF_MONTH);
+	int month = cal.get(Calendar.MONTH);
+	int year = cal.get(Calendar.YEAR);
+	
+	JLabel lblTime;
+	JLabel lblDate;
+
+	/**
+	 * Launch the application.
+	 */
+/*public static void main(String[] args) {
+		try {
+			SendAlert dialog = new SendAlert();
+			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+			dialog.setVisible(true);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}*/
+
+	
+	public void date()
+	{
+		Thread clock = new Thread()
+		{
+			public void run()
+			{
+				try {	
+					while(true)
+					{	
+					
+						
+					seconds = cal.get(Calendar.SECOND);
+					minute = cal.get(Calendar.MINUTE);
+					hour = cal.get(Calendar.HOUR);
+						
+
+					lblTime.setText("Time "+hour+":"+minute+":"+seconds);
+		
+					day = cal.get(Calendar.DAY_OF_MONTH);
+					month = cal.get(Calendar.MONTH);
+					year = cal.get(Calendar.YEAR);
+		
+					lblDate.setText("Date "+(month + 1)+"/"+day+"/"+year);
+					
+					sleep(1000);
+					}
+				} catch (InterruptedException e){
+					//
+					e.printStackTrace();
+				}
+				
+			}
+		};
+		
+		clock.start();
+	}
+	
+	
+	/**
+	 * Create the dialog.
+	 */
+	public SendAlert() {
+		setBounds(100, 100, 567, 401);
+		getContentPane().setLayout(new BorderLayout());
+		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
+		getContentPane().add(contentPanel, BorderLayout.CENTER);
+		contentPanel.setLayout(null);
+		
+		lblDate = new JLabel("Date");
+		lblDate.setBounds(44, 36, 210, 45);
+		contentPanel.add(lblDate);
+		
+		lblTime = new JLabel("Time");
+		lblTime.setBounds(44, 92, 210, 45);
+		contentPanel.add(lblTime);
+		
+		JLabel lblDescriptionOfCondition = new JLabel("Description of Condition or Concern");
+		lblDescriptionOfCondition.setBounds(44, 148, 210, 14);
+		contentPanel.add(lblDescriptionOfCondition);
+		
+		textFieldAlertMsg = new JTextField();
+		textFieldAlertMsg.setBounds(44, 173, 416, 145);
+		contentPanel.add(textFieldAlertMsg);
+		textFieldAlertMsg.setColumns(10);
+		
+		JLabel lblSendAlert = new JLabel("Send Alert");
+		lblSendAlert.setFont(new Font("Tahoma", Font.BOLD, 12));
+		lblSendAlert.setBounds(10, 11, 124, 14);
+		contentPanel.add(lblSendAlert);
+		{
+			JPanel buttonPane = new JPanel();
+			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
+			getContentPane().add(buttonPane, BorderLayout.SOUTH);
+			{
+				JButton okButton = new JButton("Submit");
+				okButton.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						String AlrtMsg = textFieldAlertMsg.getText();
+						JOptionPane.showMessageDialog (null, hour+ ":"+ minute+":" + seconds+ "\n" 
+						+ month + "/"+ day + "/"+ year+ "\n" + AlrtMsg, "Alert Sent", JOptionPane.INFORMATION_MESSAGE);
+					}
+				});
+				okButton.setActionCommand("OK");
+				buttonPane.add(okButton);
+				getRootPane().setDefaultButton(okButton);
+			}
+			{
+				JButton cancelButton = new JButton("Cancel");
+				cancelButton.setActionCommand("Cancel");
+				buttonPane.add(cancelButton);
+			}
+			
+			//time();
+			date();
+		}
+	}
+}
