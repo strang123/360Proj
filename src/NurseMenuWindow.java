@@ -36,7 +36,10 @@ public class NurseMenuWindow extends JFrame{
 			public void actionPerformed(ActionEvent e) 
 			{
 				Frames.nurseMenu.setVisible(false); 
-				Frames.update_nurse.dispose();
+				if(Frames.update_nurse != null)
+				{
+					Frames.update_nurse.dispose();
+				}				
 				Frames.update_nurse = new UpdateHealthNurse();
 				Frames.update_nurse.setLocationRelativeTo(null);
 				Frames.update_nurse.setVisible(true);

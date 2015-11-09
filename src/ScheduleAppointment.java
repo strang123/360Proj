@@ -235,6 +235,7 @@ public class ScheduleAppointment extends JDialog {
 		try
 		{
 			ArrayList<String> list = new ArrayList<String>();
+			
 			list = new ArrayList(Frames.list());
 			comboBox.addItem("");
 			for(int i = 0; i < list.size(); i++)

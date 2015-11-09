@@ -51,7 +51,10 @@ public class UserMenuWindow extends JFrame {
 			public void actionPerformed(ActionEvent arg0) 
 			{
 				Frames.userMenu.setVisible(false); 
-				Frames.sch.dispose();
+				if(Frames.sch != null)
+				{
+					Frames.sch.dispose();
+				}				
 				Frames.sch = new AppointmentGUI();
 				Frames.sch.setLocationRelativeTo(null);
 				Frames.sch.setVisible(true);
@@ -64,10 +67,17 @@ public class UserMenuWindow extends JFrame {
 		btnScheduleAppointment.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
 			{
-				Frames.appt.setSize(280,480);
-				Frames.appt.setLocationRelativeTo(null);
 				Frames.userMenu.setVisible(false); 
+				if(Frames.appt != null)
+				{
+					Frames.appt.dispose();
+				}
+				Frames.appt = new ScheduleAppointment();
+				Frames.appt.setLocationRelativeTo(null);
+				Frames.appt.setSize(280,480);
 				Frames.appt.setVisible(true);
+				
+			
 			}
 		});
 		panel_1.add(btnViewAppointments);

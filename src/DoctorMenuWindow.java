@@ -30,7 +30,10 @@ public class DoctorMenuWindow extends JFrame{
 			public void actionPerformed(ActionEvent e) 
 			{
 				Frames.docMenu.setVisible(false); 
-				Frames.patient_info.dispose();
+				if(Frames.patient_info != null)
+				{
+					Frames.patient_info.dispose();
+				}				
 				Frames.patient_info = new RetrieveInfoWindowDoctor();
 				Frames.patient_info.setLocationRelativeTo(null);
 				Frames.patient_info.setVisible(true);
@@ -56,7 +59,10 @@ public class DoctorMenuWindow extends JFrame{
 							public void actionPerformed(ActionEvent e) 
 							{
 								Frames.docMenu.setVisible(false); 
-								Frames.update_doc.dispose();
+								if(Frames.update_doc != null)
+								{
+									Frames.update_doc.dispose();
+								}				
 								Frames.update_doc = new UpdateHealthDoctors();
 								Frames.update_doc.setLocationRelativeTo(null);
 								Frames.update_doc.setVisible(true);
@@ -70,7 +76,10 @@ public class DoctorMenuWindow extends JFrame{
 								public void actionPerformed(ActionEvent e) 
 								{
 									Frames.docMenu.setVisible(false); 
-									Frames.prescribe.dispose();
+									if(Frames.prescribe != null)
+									{
+										Frames.prescribe.dispose();
+									}				
 									Frames.prescribe = new EPrescribeWindow();
 									Frames.prescribe.setLocationRelativeTo(null);
 									Frames.prescribe.setVisible(true);

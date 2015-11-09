@@ -43,8 +43,17 @@ public class NSPStaffMenuWindow extends JFrame {
 		btnUpdateMedicalHistory.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
 			{
-				Frames.nspMenu.setVisible(false); 
+				/*Frames.nspMenu.setVisible(false); 
 				Frames.patient_info_hsp.dispose();
+				Frames.patient_info_hsp = new RetrieveInfoWindowHSP();
+				Frames.patient_info_hsp.setLocationRelativeTo(null);
+				Frames.patient_info_hsp.setVisible(true);*/
+				
+				Frames.nspMenu.setVisible(false); 
+				if(Frames.patient_info_hsp != null)
+				{
+					Frames.patient_info_hsp.dispose();
+				}				
 				Frames.patient_info_hsp = new RetrieveInfoWindowHSP();
 				Frames.patient_info_hsp.setLocationRelativeTo(null);
 				Frames.patient_info_hsp.setVisible(true);

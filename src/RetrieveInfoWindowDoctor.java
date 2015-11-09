@@ -168,7 +168,10 @@ public class RetrieveInfoWindowDoctor extends JDialog {
 			public void actionPerformed(ActionEvent arg0) 
 			{
 				Frames.patient_info.setVisible(false); 
-				Frames.docViewPatient.dispose();
+				if(Frames.docViewPatient != null)
+				{
+					Frames.docViewPatient.dispose();
+				}				
 				Frames.docViewPatient = new DocViewPatient();
 				Frames.docViewPatient.setLocationRelativeTo(null);
 				Frames.docViewPatient.setVisible(true);

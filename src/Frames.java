@@ -25,15 +25,29 @@ public class Frames
 	public static NurseMenuWindow nurseMenu = new NurseMenuWindow();
 	public static NSPStaffMenuWindow nspMenu = new NSPStaffMenuWindow();
 	
-	public static ScheduleAppointment appt = new ScheduleAppointment();
+	//public static ScheduleAppointment appt = new ScheduleAppointment();
+	public static ScheduleAppointment appt;
+
 	public static UpdateHealth cond = new UpdateHealth();
-	public static EPrescribeWindow prescribe = new EPrescribeWindow();
-	public static AppointmentGUI sch = new AppointmentGUI();
-	public static UpdateHealthDoctors update_doc = new UpdateHealthDoctors();
-	public static RetrieveInfoWindowDoctor patient_info = new RetrieveInfoWindowDoctor();
-	public static DocViewPatient docViewPatient = new DocViewPatient();
-	public static UpdateHealthNurse update_nurse = new UpdateHealthNurse();
-	public static RetrieveInfoWindowHSP patient_info_hsp = new RetrieveInfoWindowHSP();
+	//public static EPrescribeWindow prescribe = new EPrescribeWindow();
+	public static EPrescribeWindow prescribe;
+
+	//public static AppointmentGUI sch = new AppointmentGUI();
+	public static AppointmentGUI sch;
+	//public static UpdateHealthDoctors update_doc = new UpdateHealthDoctors();
+	public static UpdateHealthDoctors update_doc;
+
+	//public static RetrieveInfoWindowDoctor patient_info = new RetrieveInfoWindowDoctor();
+	public static RetrieveInfoWindowDoctor patient_info;
+
+	//public static DocViewPatient docViewPatient = new DocViewPatient();
+	public static DocViewPatient docViewPatient;
+
+	//public static UpdateHealthNurse update_nurse = new UpdateHealthNurse();
+	public static UpdateHealthNurse update_nurse;
+
+	//public static RetrieveInfoWindowHSP patient_info_hsp = new RetrieveInfoWindowHSP();
+	public static RetrieveInfoWindowHSP patient_info_hsp;
 	public static StatReport stats = new StatReport();
 	
 	//======================================

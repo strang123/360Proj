@@ -69,8 +69,16 @@ public class DocViewPatient extends JFrame{
 				{
 					table.getCellEditor().stopCellEditing();
 					Frames.delete("SCHEDULE", "ID" ,id);
-					Frames.docMenu.setVisible(true);
+					//Frames.docMenu.setVisible(true);
+					//Frames.docViewPatient.setVisible(false); 
 					Frames.docViewPatient.setVisible(false); 
+					if(Frames.docMenu != null)
+					{
+						Frames.docMenu.dispose();
+					}				
+					Frames.docMenu = new DoctorMenuWindow();
+					Frames.docMenu.setLocationRelativeTo(null);
+					Frames.docMenu.setVisible(true);
 				}
 				else
 				{
@@ -89,8 +97,16 @@ public class DocViewPatient extends JFrame{
 	    	{
 	    		table.getCellEditor().stopCellEditing();
 	    		Frames.update("SCHEDULE", colString ,Frames.doc_patient, update, id);
-	    		Frames.docMenu.setVisible(true);
-				Frames.docViewPatient.setVisible(false); 
+	    	//	Frames.docMenu.setVisible(true);
+				//Frames.docViewPatient.setVisible(false); 
+	    		Frames.docViewPatient.setVisible(false); 
+				if(Frames.docMenu != null)
+				{
+					Frames.docMenu.dispose();
+				}				
+				Frames.docMenu = new DoctorMenuWindow();
+				Frames.docMenu.setLocationRelativeTo(null);
+				Frames.docMenu.setVisible(true);
 	    	}
 	    });
 		btnPane.add(btnUpdateAppointment);
@@ -99,8 +115,16 @@ public class DocViewPatient extends JFrame{
 		btnGoBack.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
 			{
-				Frames.docMenu.setVisible(true);
+				//Frames.docMenu.setVisible(true);
+			//	Frames.docViewPatient.setVisible(false); 
 				Frames.docViewPatient.setVisible(false); 
+				if(Frames.docMenu != null)
+				{
+					Frames.docMenu.dispose();
+				}				
+				Frames.docMenu = new DoctorMenuWindow();
+				Frames.docMenu.setLocationRelativeTo(null);
+				Frames.docMenu.setVisible(true);
 			}
 		});
 		btnPane.add(btnGoBack);	
