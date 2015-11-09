@@ -98,6 +98,10 @@ public class StatReport extends JFrame {
 						}
 						rate ++;
 					}
+/*					System.out.println("male: " + male); //show what is stored in male
+					System.out.println("female: " + female); //show what is stored in female
+					System.out.println("rate: " + rate); //show what is stored in rate*/
+					
 					while(rs2.next())
 					{
 						String test2 = rs2.getString("COND");
@@ -114,7 +118,10 @@ public class StatReport extends JFrame {
 							fever++;
 						}
 					}
-					lblNewLabel_1.setText("There are "+pain+" with chest pain and "+fever+" with fever.");
+/*					System.out.println("pain: " + pain); //show what is stored in pain
+					System.out.println("fever: " + fever); //show what is stored in fever*/
+					
+					lblNewLabel_1.setText("There are "+ pain +" with chest pain and "+ fever +" with fever.");
 					lblNewLabel_4.setText("There are " + male + " males and " + female +" females.");
 					lblNewLabel_2.setText("There are a total of " + rate + " patients.");
 				} catch (SQLException e1) {
