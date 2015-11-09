@@ -117,7 +117,7 @@ public class StatReport extends JFrame {
 						{
 							fever++;
 						}
-					} 
+					}  
 /*					System.out.println("pain: " + pain); //show what is stored in pain
 					System.out.println("fever: " + fever); //show what is stored in fever*/
 					
