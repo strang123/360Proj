@@ -37,27 +37,27 @@ public class StatReport extends JFrame {
 		contentPane.add(lblAdmissionRates);
 		
 		JLabel lblPatientPopulations = new JLabel("Patient Gender Ratio");
-		lblPatientPopulations.setBounds(52, 122, 121, 16);
+		lblPatientPopulations.setBounds(52, 121, 135, 16);
 		contentPane.add(lblPatientPopulations);
 		
 		JLabel lblStatisticalReports = new JLabel("Statistical Reports");
-		lblStatisticalReports.setBounds(169, 24, 121, 16);
+		lblStatisticalReports.setBounds(199, 25, 121, 16);
 		contentPane.add(lblStatisticalReports);
 		
 		JButton btnGenerateReport = new JButton("Generate Report");
-		btnGenerateReport.setBounds(129, 217, 164, 29);
+		btnGenerateReport.setBounds(199, 217, 164, 29);
 		contentPane.add(btnGenerateReport);
 		
 		JLabel lblNewLabel_1 = new JLabel("");
-		lblNewLabel_1.setBounds(185, 70, 344, 14);
+		lblNewLabel_1.setBounds(199, 69, 344, 14);
 		contentPane.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("");
-		lblNewLabel_2.setBounds(185, 96, 221, 14);
+		lblNewLabel_2.setBounds(199, 95, 344, 14);
 		contentPane.add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_4 = new JLabel("");
-		lblNewLabel_4.setBounds(183, 122, 205, 14);
+		lblNewLabel_4.setBounds(199, 121, 344, 14);
 		contentPane.add(lblNewLabel_4);
 		
 		JButton btnGoBack = new JButton("Go Back");
@@ -69,7 +69,7 @@ public class StatReport extends JFrame {
 				Frames.nspMenu.setVisible(true);
 			}
 		});
-		btnGoBack.setBounds(10, 220, 89, 23);
+		btnGoBack.setBounds(52, 220, 89, 23);
 		contentPane.add(btnGoBack);
 		
 		btnGenerateReport.addActionListener(new ActionListener() {
