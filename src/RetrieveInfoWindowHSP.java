@@ -136,6 +136,7 @@ public class RetrieveInfoWindowHSP extends JDialog {
 	private JButton btnSendAlert;
 	private JButton btnViewAppointments;
 	private JComboBox comboBox;
+	private JButton btnGoBack;
 	public RetrieveInfoWindowHSP() {
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		setBounds(300, 300, 484, 240); //window size
@@ -255,6 +256,22 @@ public class RetrieveInfoWindowHSP extends JDialog {
 				table.setValueAt(Frames.get(combobox_patient, "USERNAME", "PATIENT", "INSURANCENAME"), 5, 1);
 			}
 		});
+		
+		btnGoBack = new JButton("Go Back");
+		btnGoBack.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e)
+			{
+				Frames.patient_info_hsp.setVisible(false); 
+				if(Frames.nspMenu != null)
+				{
+					Frames.nspMenu.dispose();
+				}				
+				Frames.nspMenu = new NSPStaffMenuWindow();
+				Frames.nspMenu.setLocationRelativeTo(null);
+				Frames.nspMenu.setVisible(true);
+			}
+		});
+		toolBar.add(btnGoBack);
 		toolBar.add(comboBox);
 		
 	}

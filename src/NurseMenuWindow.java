@@ -46,16 +46,6 @@ public class NurseMenuWindow extends JFrame{
 			}
 		});
 		panel_1.add(btnUpdateHealthCondition);
-	//	btnUpdateHealthCondition.setEnabled(false);
-		
-		JButton btnLogOut = new JButton("Log Out");
-	//	btnLogOut.setEnabled(false);
-		btnLogOut.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) 
-			{
-			}
-		});
-		panel_1.add(btnLogOut);
 		
 		JButton btnExitProgram = new JButton("Exit Program");
 		btnExitProgram.addActionListener(new ActionListener() {

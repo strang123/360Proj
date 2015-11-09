@@ -136,6 +136,7 @@ public class RetrieveInfoWindowDoctor extends JDialog {
 	private JButton btnSendAlert;
 	private JButton btnViewAppointments;
 	private JComboBox comboBox;
+	private JButton btnGoBack;
 	public RetrieveInfoWindowDoctor() {
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		setBounds(300, 300, 484, 240); //window size
@@ -256,6 +257,23 @@ public class RetrieveInfoWindowDoctor extends JDialog {
 				table.setValueAt(Frames.get(combobox_patient, "USERNAME", "PATIENT", "INSURANCENAME"), 5, 1);
 			}
 		});
+		
+		btnGoBack = new JButton("Go Back");
+		btnGoBack.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) 
+			{
+				Frames.patient_info.setVisible(false); 
+				if(Frames.docMenu != null)
+				{
+					Frames.docMenu.dispose();
+				}				
+				Frames.docMenu = new DoctorMenuWindow();
+				Frames.docMenu.setLocationRelativeTo(null);
+				Frames.docMenu.setVisible(true);
+				
+			}
+		});
+		toolBar.add(btnGoBack);
 		toolBar.add(comboBox);
 		
 	}
