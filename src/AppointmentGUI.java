@@ -87,10 +87,18 @@ public class AppointmentGUI extends JFrame{
 	    btnUpdateAppointment.addActionListener(new ActionListener() {
 	    	public void actionPerformed(ActionEvent e) 
 	    	{
-	    		table.getCellEditor().stopCellEditing();
-	    		Frames.update("SCHEDULE", colString ,Frames.user, update, id);
-	    		Frames.userMenu.setVisible(true);
-				Frames.sch.setVisible(false); 
+	    		if(table.getCellEditor() != null)
+				{
+		    		table.getCellEditor().stopCellEditing();
+		    		Frames.update("SCHEDULE", colString ,Frames.user, update, id);
+		    		Frames.userMenu.setVisible(true);
+					Frames.sch.setVisible(false); 
+				}
+	    		else
+				{
+					JOptionPane.showConfirmDialog(null, "Please double click on Day or Time of appointment to delete", "Alert Message", JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE);
+
+				}
 	    	}
 	    });
 		btnPane.add(btnUpdateAppointment);
