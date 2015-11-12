@@ -214,6 +214,7 @@ public class RetrieveInfoWindowHSP extends JDialog {
 					Frames.patient_info_hsp.setVisible(false); 
 					Frames.nspMenu.setLocationRelativeTo(null);
 					Frames.nspMenu.setVisible(true);
+					JOptionPane.showMessageDialog(getContentPane(), "Patient information has been updated", "Update Successful",JOptionPane.INFORMATION_MESSAGE);
 				}
 				else
 				{
