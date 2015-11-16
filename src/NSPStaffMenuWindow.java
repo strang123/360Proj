@@ -83,5 +83,14 @@ public class NSPStaffMenuWindow extends JFrame {
 		});
 		panel_1.add(btnGenerateStatisticalReport);
 		panel_1.add(btnExitProgram);
+		
+		JButton btnUploadupdateMedicalHistory = new JButton("Upload / Update Medical History");
+		btnUploadupdateMedicalHistory.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				UploadLab med = new UploadLab();
+				med.setVisible(true);
+			}
+		});
+		panel_1.add(btnUploadupdateMedicalHistory);
 	}
 }
