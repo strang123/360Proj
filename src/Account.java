@@ -476,7 +476,7 @@ public class Account
 		     }
 			if(test == "")
 			{
-				JOptionPane.showConfirmDialog(null, "Couldnt find User Name!", "Alert Message", JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE);
+				JOptionPane.showConfirmDialog(null, "Couldn't find User Name or Password!", "Alert Message", JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE);
 				return "";
 			}
 		}
